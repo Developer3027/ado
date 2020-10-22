@@ -1,3 +1,21 @@
+# Ado
+## A better concept on Todo
+
+The Todo app has been done. You see it everywhere. You can find various versions made in any tech really. This one is made in React. In my opinion though, Ado is far better than Todo. The todo list is a self managed list of objectives to complete in the short term. I believe that, for most people, the todo list will illicit the infamous eye roll as typically, it is much ado.
+
+* *_ clean the garage _*
+* *_ clean the kitchen _*
+* *_ spend $1,500 on anniversary _*
+* *_ paint the fence _*
+* *_ pet the cat, ... in front of him _*
+* *_ change the blades on the lawn mower _*
+* *_ wave, ... an smile at the landlord _*
+  * *_ deal with waving and smiling _*
+
+These are just a few on my list, that proves the point. Somewhat of a todo, but much more of an ado. So I created this version.
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
