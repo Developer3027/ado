@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Ado from './components/Ado'
 import AdoForm from './components/AdoForm'
+
+import { AuthProvider } from './contexts/AuthContext'
+import SignUp from './components/Signup'
 import './App.css'
 
 function App () {
@@ -39,6 +42,9 @@ function App () {
 
   return (
     <div className='app'>
+      <AuthProvider>
+        <SignUp />
+      </AuthProvider>
       <div className='ado-list'>
         {ados.map((ado, i) => (
           <Ado
