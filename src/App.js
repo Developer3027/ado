@@ -1,62 +1,22 @@
-import React, { useState } from 'react'
-import Ado from './components/Ado'
-import AdoForm from './components/AdoForm'
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { AuthProvider } from './contexts/AuthContext'
 import SignUp from './components/Signup'
+import Dashboard from './components/Dashboard'
 import './App.css'
 
 function App () {
-  const [ados, setAdos] = useState([
-    {
-      text: 'learn react',
-      isCompleted: false
-    },
-    {
-      text: 'something',
-      isCompleted: true
-    },
-    {
-      text: 'clean kitchen',
-      isCompleted: false
-    }
-  ])
-
-  const addAdo = text => {
-    const newAdo = [...ados, { text }]
-
-    setAdos(newAdo)
-  }
-
-  const completeAdo = index => {
-    const newAdos = [...ados]
-    newAdos[index].isCompleted = true
-    setAdos(newAdos)
-  }
-
-  const removeAdo = index => {
-    const deleteAdos = [...ados]
-    deleteAdos.splice(index, 1)
-    setAdos(deleteAdos)
-  }
-
   return (
     <div className='app'>
-      <AuthProvider>
-        <SignUp />
-      </AuthProvider>
-      <div className='ado-list'>
-        {ados.map((ado, i) => (
-          <Ado
-            key={i}
-            index={i}
-            ado={ado}
-            completeAdo={completeAdo}
-            removeAdo={removeAdo}
-          />
-        ))}
-        <AdoForm addAdo={addAdo} />
-      </div>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            <Route path='/signup' component={SignUp} />
+          </Switch>
+        </AuthProvider>
+      </Router>
     </div>
   )
 }
